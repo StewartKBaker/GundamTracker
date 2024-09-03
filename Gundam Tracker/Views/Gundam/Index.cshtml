@@ -1,0 +1,27 @@
+@model IEnumerable<Gundam>
+
+<h2>Gunpla</h2>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Grade</th>
+        <th>Built</th>
+        <th>Rating</th>
+    </tr>
+
+    @foreach (var gunpla in @Model)
+    {
+        <tr>
+            <td>@gunpla.GundamID</td>
+            <td>@gunpla.Name</td>
+            <td>@gunpla.Price</td>
+            <td>@gunpla.Grade</td>
+            <td>@gunpla.Built</td>
+            <td>@gunpla.Rating</td>
+        </tr>
+    }
+
+</table>

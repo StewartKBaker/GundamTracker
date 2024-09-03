@@ -1,7 +1,20 @@
+using System.Data;
+using Gundam_Tracker;
+using MySql.Data.MySqlClient;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IDbConnection>((s) =>
+{
+    IDbConnection conn = new MySqlConnection(builder.Configuration.GetConnectionString("gunpla"));
+    conn.Open();
+    return conn;
+});
+
+builder.Services.AddTransient<IGundamRepo, GundamRepo>();
 
 var app = builder.Build();
 
