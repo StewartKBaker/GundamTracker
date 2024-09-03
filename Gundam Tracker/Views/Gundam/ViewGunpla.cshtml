@@ -1,0 +1,33 @@
+@model Gundam
+
+<html>
+<head>
+    <title>@Model.Name Details Page</title>
+</head>
+<body>
+<div>
+    <h2>@Model.Name Informaion</h2>
+    <table class="table">
+        <tr>
+            <th>Gundam ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Grade</th>
+            <th>Built</th>
+            <th>Rating</th>
+        </tr>
+        <tr>
+            <td>@Model.GundamID</td>
+            <td>@Model.Name</td>
+            <td>@Model.Price</td>
+            <td>@Model.Grade</td>
+            <td>@Model.Built</td>
+            <td>@Model.Rating</td>
+        </tr>
+    </table>    
+    <div style="display: block">
+        <a href="/Gundam/UpdateGunpla/@Model.GundamID">Update this Gundam</a>
+    </div>
+</div>
+</body>
+</html>

@@ -12,4 +12,15 @@
       <PackageReference Include="MySql.Data" Version="9.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Gundam\Grades\HG Gunpla.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Gundam\Grades\MG Gunpla.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Gundam\Grades\PG Gunpla.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Gundam\Grades\RG Gunpla.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Views\Grades\" />
+    </ItemGroup>
+
 </Project>

@@ -13,10 +13,25 @@ public class GundamRepo : IGundamRepo
         _conn = dbConn;
     }
 
-    public IEnumerable<Gundam> GetAllProducts()
+    public IEnumerable<Gundam> GetAllGunpla()
     {
         return _conn.Query<Gundam>("SELECT * FROM products;");
     }
-    
-    
+
+    public Gundam GetGunpla(int id)
+    {
+        var product = _conn.QuerySingle<Gundam>("SELECT * FROM products WHERE GundamID = @id;", new { id = id });
+        return product;
+    }
+
+    public void UpdateGunpla(Gundam gundam)
+    {
+        _conn.Execute(
+            "UPDATE products SET Name = @name, Price = @price, Grade = @grade, Built = @built, Rating = @rating WHERE GundamID = @id",
+            new
+            {
+                name = gundam.Name, price = gundam.Price, grade = gundam.Grade, built = gundam.Built,
+                rating = gundam.Rating, id = gundam.GundamID
+            });
+    }
 }

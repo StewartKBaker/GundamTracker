@@ -4,7 +4,9 @@ namespace Gundam_Tracker;
 
     public interface IGundamRepo
     {
-        IEnumerable<Gundam> GetAllProducts();
+        IEnumerable<Gundam> GetAllGunpla();
+        Gundam GetGunpla(int id);
+        void UpdateGunpla(Gundam gundam);
     }
 
 
