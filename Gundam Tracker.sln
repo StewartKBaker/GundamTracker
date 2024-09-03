@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gundam Tracker", "Gundam Tracker\Gundam Tracker.csproj", "{0D565C45-3926-46E2-8247-072AC3A7D17B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D565C45-3926-46E2-8247-072AC3A7D17B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D565C45-3926-46E2-8247-072AC3A7D17B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D565C45-3926-46E2-8247-072AC3A7D17B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D565C45-3926-46E2-8247-072AC3A7D17B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
