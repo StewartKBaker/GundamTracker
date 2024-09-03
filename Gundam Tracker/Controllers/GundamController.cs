@@ -40,4 +40,15 @@ public class GundamController : Controller
 
         return RedirectToAction("ViewGunpla", new { id = gundam.GundamID });
     }
+
+    public IActionResult InsertGunpla()
+    {
+        return View();
+    }
+
+    public IActionResult InsertGunplaToDatabase(Gundam gunplaToInsert)
+    {
+        _repo.InsertGunpla(gunplaToInsert);
+        return RedirectToAction("Index");
+    }
 }

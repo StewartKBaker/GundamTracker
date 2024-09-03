@@ -5,8 +5,13 @@ namespace Gundam_Tracker;
     public interface IGundamRepo
     {
         IEnumerable<Gundam> GetAllGunpla();
+        
         Gundam GetGunpla(int id);
+        
         void UpdateGunpla(Gundam gundam);
+        
+        public void InsertGunpla(Gundam gunplaToInsert);
+
     }
 
 

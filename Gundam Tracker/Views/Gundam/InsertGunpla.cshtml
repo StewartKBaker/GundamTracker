@@ -1,0 +1,39 @@
+@model Gundam
+
+<h2>Create a New Product</h2>
+
+@using (Html.BeginForm("InsertGunplaToDatabase", "Gundam", "Post"))
+{
+    <input asp-for="GundamID" type="hidden" value="" />
+
+    <label asp-for="Name" class="control-label">Name</label>
+    <input type="text" name="Name" class="form-control" value="" />
+
+    <label asp-for="Price" class="control-label">Price</label>    
+    <input type="number" step="0.01" name="Price" class="form-control" />
+    
+    <label asp-for="Grade">Grade</label>
+    <select class="form-control" name="Grade" value="">
+        <option>HG</option>
+        <option>MG</option>
+        <option>RG</option>
+        <option>PG</option>
+    </select>
+    
+    <label asp-for="Built" class="control-label">Built</label>    
+    <input asp-for="Built"  type="checkbox" class="form-control" />
+
+    <label asp-for="Rating">Rating</label>
+    <select class="form-control" name="Rating" value="">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+
+    
+    
+    <input type="submit" value="Create Product" class="btn btn-primary" />
+}
