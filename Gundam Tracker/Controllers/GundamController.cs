@@ -18,6 +18,12 @@ public class GundamController : Controller
         return View(products);
     }
 
+    public IActionResult GradeGunpla(string grade)
+    {
+        var products = _repo.GetGradeGunpla(grade);
+        return View(products);
+    }
+
     public IActionResult ViewGunpla(int id)
     {
         var product = _repo.GetGunpla(id);

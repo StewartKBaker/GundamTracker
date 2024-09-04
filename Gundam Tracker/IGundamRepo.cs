@@ -5,6 +5,8 @@ namespace Gundam_Tracker;
     public interface IGundamRepo
     {
         IEnumerable<Gundam> GetAllGunpla();
+
+        IEnumerable<Gundam> GetGradeGunpla(string grade);
         
         Gundam GetGunpla(int id);
         

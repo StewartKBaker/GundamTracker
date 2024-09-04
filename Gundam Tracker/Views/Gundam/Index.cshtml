@@ -1,32 +1,93 @@
 @model IEnumerable<Gundam>
 
-<h2>Gunpla</h2>
-<h3>Total Spent:</h3> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gunpla Collection</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+        li {
+            text-align: center;
+        }
+        .price {
+            font-weight: bold;
+            color: rgb(71, 203, 251);
+        }
+        h1 {
+            font-size: 80px;
+        }
+        .card{
+            height: 590px;
+            width:  420px;
+        }
+        
+        .GundamImg{
+            max-width: 420px;
+            max-height: 420px;
+            display: block;
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
 
-<div style="display: block">
-    <a href="/Gundam/InsertGunpla/">Create a New Gundam</a>
+<body>
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Gunpla Collection</h1>
+            <p class="lead text-body-secondary">Collection of all the Gundam Figures I Own!</p>
+            <p>
+                <a href="/Gundam/InsertGunpla/" class="btn btn-primary my-2">Add a New Gunpla</a>
+            </p>
+            <p>
+                <a href="/Grades/GradeGunpla/" class="btn btn-primary my-2">HG Gunpla</a>
+                <a href="/Grades/GradeGunpla/" class="btn btn-primary my-2">MG Gunpla</a>
+                <a href="/Grades/GradeGunpla/" class="btn btn-primary my-2">RG Gunpla</a>
+                <a href="/Grades/GradeGunpla/" class="btn btn-primary my-2">PG Gunpla</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @foreach (var gunpla in @Model)
+            { 
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="GundamImg">
+                            <img src="@Url.Content($"~/Images/{gunpla.GundamID}.webp")" width="100%" height="100%" fill="#55595c" alt="@gunpla.Name"></img>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>@gunpla.Name</li>
+                                <li class="price">$ @gunpla.Price</li>
+                                <li>Built: @gunpla.Built</li>
+                                <li>Rating: @gunpla.Rating
+                                
+                                </li>
+                            </ul>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/Gundam/ViewGunpla/@gunpla.GundamID">View</a></button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/Gundam/UpdateGunpla/@gunpla.GundamID">Update</a></button>
+                                </div>
+                                <small class="text-body-secondary">Grade: @gunpla.Grade</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </div>
 
-<table class="table">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Grade</th>
-        <th>Built</th>
-        <th>Rating</th>
-    </tr>
-
-    @foreach (var gunpla in @Model)
-    {
-        <tr>
-            <td><a href = "/Gundam/ViewGunpla/@gunpla.GundamID">@gunpla.GundamID</a></td>
-            <td>@gunpla.Name</td>
-            <td>@gunpla.Price</td>
-            <td>@gunpla.Grade</td>
-            <td>@gunpla.Built</td>
-            <td>@gunpla.Rating</td>
-        </tr>
-    }
-
-</table>
+</body>
+</html>

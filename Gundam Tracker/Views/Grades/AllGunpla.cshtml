@@ -1,0 +1,34 @@
+@model IEnumerable<Gundam>
+
+@{
+ViewData["All Gunpla"] = "All";
+}
+
+@foreach (var gunpla in @Model)
+{
+<div class="col">
+    <div class="card shadow-sm">
+        <div class="GundamImg">
+            <img src="@Url.Content($"~/Images/{gunpla.GundamID}.webp")" width="100%" height="100%" fill="#55595c" alt="@gunpla.Name"></img>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li>@gunpla.Name</li>
+                <li class="price">$ @gunpla.Price</li>
+                <li>Built: @gunpla.Built</li>
+                <li>Rating: @gunpla.Rating
+
+                </li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/Gundam/ViewGunpla/@gunpla.GundamID">View</a></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/Gundam/UpdateGunpla/@gunpla.GundamID">Update</a></button>
+                </div>
+                <small class="text-body-secondary">Grade: @gunpla.Grade</small>
+            </div>
+        </div>
+    </div>
+</div>
+}
+

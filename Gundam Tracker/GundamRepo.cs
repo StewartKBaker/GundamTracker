@@ -18,6 +18,11 @@ public class GundamRepo : IGundamRepo
         return _conn.Query<Gundam>("SELECT * FROM products;");
     }
 
+    public IEnumerable<Gundam> GetGradeGunpla(string grade)
+    {
+        return _conn.Query<Gundam>($"SELECT * FROM produsts WHERE Grade = '{grade}'");
+    }
+
     public Gundam GetGunpla(int id)
     {
         var product = _conn.QuerySingle<Gundam>("SELECT * FROM products WHERE GundamID = @id;", new { id = id });
