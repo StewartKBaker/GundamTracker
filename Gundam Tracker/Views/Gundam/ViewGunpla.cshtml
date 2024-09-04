@@ -1,12 +1,32 @@
 @model Gundam
 
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
 <head>
     <title>@Model.Name Details Page</title>
+    <link rel="stylesheet" href="css/viewGundam.css"/>
+    <style>
+        .container img {
+            width: 50%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            padding-bottom: 50px;
+        }
+        .container h2 {
+            text-align: center;
+        }
+        body {
+            
+        }
+    </style>    
 </head>
+
 <body>
-<div>
+<div class="container">
     <h2>@Model.Name Informaion</h2>
+    <img src="@Url.Content($"~/Images/{Model.GundamID}.webp")" alt="@Model.Name">
     <table class="table">
         <tr>
             <th>Gundam ID</th>
@@ -24,9 +44,9 @@
             <td>@Model.Built</td>
             <td>@Model.Rating</td>
         </tr>
-    </table>    
+    </table>
     <div style="display: block">
-        <a href="/Gundam/UpdateGunpla/@Model.GundamID">Update this Gundam</a>
+
     </div>
 </div>
 </body>

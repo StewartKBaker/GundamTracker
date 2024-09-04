@@ -10,24 +10,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ac507f2-6461-4b88-bea0-407d40cbfd4e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Gundam Tracker/Views/Grades/AllGunpla.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gundam Tracker/Views/Grades/GradeGunpla.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gundam Tracker/Models/GundamIndexView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gundam Tracker/Views/Gundam/Favorites.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gundam Tracker/wwwroot/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Gundam Tracker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gundam Tracker/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gundam Tracker/Controllers/GundamController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gundam Tracker/Controllers/GundamController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gundam Tracker/Gundam Tracker.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Gundam Tracker/Gundam Tracker.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gundam Tracker/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gundam Tracker/Controllers/HomeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gundam Tracker/GundamRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gundam Tracker/GundamRepo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gundam Tracker/IGundamRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gundam Tracker/IGundamRepo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gundam Tracker/Models/Gundam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gundam Tracker/Models/Gundam.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gundam Tracker/Views/Grades/AllGunpla.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gundam Tracker/Views/Grades/GradeGunpla.cshtml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Gundam Tracker/Views/Gundam/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Gundam Tracker/Views/Gundam/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gundam Tracker/Views/Gundam/InsertGunpla.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Gundam Tracker/Views/Gundam/InsertGunpla.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gundam Tracker/Views/Gundam/ViewGunpla.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Gundam Tracker/Views/Gundam/ViewGunpla.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gundam Tracker/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Gundam Tracker/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gundam Tracker/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Gundam Tracker/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gundam Tracker/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Gundam Tracker/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JSON File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -36,6 +48,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Mvc/Mvc.Razor/src/RazorPage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Gundam Tracker/Views/Gundam/Index.cshtml" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -51,6 +64,7 @@
     &quot;.NET Launch Settings Profile.Gundam Tracker: IIS Express.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -123,7 +137,8 @@
       <updated>1725321730416</updated>
       <workItem from="1725321731721" duration="15629000" />
       <workItem from="1725416842206" duration="4267000" />
-      <workItem from="1725421192000" duration="471000" />
+      <workItem from="1725421192000" duration="17291000" />
+      <workItem from="1725470878752" duration="8819000" />
     </task>
     <servers />
   </component>

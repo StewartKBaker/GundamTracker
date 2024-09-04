@@ -12,16 +12,45 @@ public class GundamController : Controller
         _repo = repo;
     }
     
-    public IActionResult Index()
+    public IActionResult Index(string gradeSort)
     {
-        var products = _repo.GetAllGunpla();
-        return View(products);
-    }
+        IEnumerable<Gundam> products;
+        switch (gradeSort)
+        {
+            case "All":
+                products = _repo.GetAllGunpla();
+                break;
+            case "HG":
+                products = _repo.GetGradeGunpla("HG");
+                break;
+            case "MG":
+                products = _repo.GetGradeGunpla("MG");
+                break;
+            case "RG":
+                products = _repo.GetGradeGunpla("RG");
+                break;
+            case "PG":
+                products = _repo.GetGradeGunpla("PG");
+                break;
+            default:
+                products = _repo.GetAllGunpla();
+                break;
+        }
+        var totalBought = products.Count();
+        var totalBuilt = products.Count(x => x.Built);
+        var totalSpent = products.Sum(x => x.Price);
 
-    public IActionResult GradeGunpla(string grade)
-    {
-        var products = _repo.GetGradeGunpla(grade);
-        return View(products);
+        var roundedTotal = Math.Round(totalSpent, 2);
+
+        var viewGundam = new GundamIndexView()
+        {
+            Gunpla = products,
+            TotalBought = totalBought,
+            TotalBuilt = totalBuilt,
+            TotalSpent = roundedTotal
+        };
+        
+        return View(viewGundam);
     }
 
     public IActionResult ViewGunpla(int id)
@@ -56,5 +85,10 @@ public class GundamController : Controller
     {
         _repo.InsertGunpla(gunplaToInsert);
         return RedirectToAction("Index");
+    }
+
+    public IActionResult Favorites()
+    {
+        return View();
     }
 }

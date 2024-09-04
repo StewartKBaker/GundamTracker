@@ -1,0 +1,66 @@
+@model Gundam
+
+<head>
+    <title>Favorites</title>
+    <style>
+        .favorite-gunpla-container{
+            display:flex;
+            justify-content: space-between;
+            gap:20px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .gunpla{
+            flex:1;
+            max-width: calc(33.333% - 20px);
+            box-sizing: border-box;
+            border: 1px solid rgba(0, 0, 0, .125);
+            background-color: white;
+            padding: 20px;
+        }
+
+        .favorites-title {
+            margin: 10px 0;
+            font-size: 2rem;
+        }
+
+        .fav-desc {
+            padding: 0 10px;
+            font-size: 1.4rem;
+            color: #333;
+        }
+
+        .favorites-header {
+            margin: 70px;
+        }
+    </style>
+</head>
+
+
+<div class="text-center">
+    <h1 class="display-4 favorites-header">Top 3 Favorite Kits</h1>
+    <div class="favorite-gunpla-container">
+
+
+        <div class="gunpla">
+            <div class="favorites-title">Full Mechanics Forbidden Gundam</div>
+            <div class="Image"><img src="~/Images/Full Mechanics Forbidden.webp" width="100%" height="100%" fill="#55595c" alt=""></div>
+            <div class="fav-desc">The Full Mechanics Forbidden Gundam is one of my all-time Favorites so far due to its massive Scythe. I really love the mint green color scheme and the large backpack unit.</div>
+        </div>
+
+
+        <div class="gunpla">
+            <div class="favorites-title">Try Burning Gundam</div>
+            <div class="Image"><img src="~/Images/Try Burning.webp" width="100%" height="100%" fill="#55595c" alt=""></div>
+            <div class="fav-desc">The Try Burning Gundam's main sell point for me is the fire effects that can be put on the figure. It makes it stand out among the rest on my shelf of figures.</div>
+        </div>
+
+
+        <div class="gunpla">
+            <div class="favorites-title">Sinanju Stein (Narrative Ver.)</div>
+            <div class="Image"><img src="~/Images/Sinanju Stein.webp" width="100%" height="100%" fill="#55595c" alt=""></div>
+            <div class="fav-desc">Even though the Sinanju Stein was one of the first kits I built, its size compared to the rest in its grade and its colors really have made it stay in my top favorites. It just looks so badass!</div>
+        </div>
+    </div>
+</div>

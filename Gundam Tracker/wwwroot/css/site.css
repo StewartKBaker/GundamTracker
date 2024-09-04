@@ -20,3 +20,44 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: 60px;
+  margin-left: 0;
+}
+
+.favorite-gunpla-container{
+  display:flex;
+  justify-content: space-between;
+  gap:20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.gunpla{
+  flex:1;
+  max-width: calc(33.333% - 20px);
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, .125);
+  background-color: white;
+  padding: 20px;
+}
+
+.favorites-title {
+  margin: 10px 0;
+  font-size: 2rem;
+}
+
+.fav-desc {
+  padding: 0 10px;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.favorites-header {
+  margin: 70px;
+}
+

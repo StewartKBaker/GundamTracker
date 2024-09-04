@@ -1,0 +1,64 @@
+ul {
+    list-style-type: none;
+}
+li {
+    text-align: center;
+}
+.price {
+    font-weight: bold;
+    color: rgb(71, 203, 251);
+}
+h1 {
+    font-size: 80px;
+}
+.card{
+    height: 590px;
+    width:  420px;
+}
+
+.GundamImg{
+    max-width: 420px;
+    max-height: 420px;
+    display: block;
+    width: auto;
+    height: auto;
+}
+.grade {
+    background-color: rgb(71, 203, 251);
+    padding: 3px 6px 3px 6px;
+    font-size: 12px;
+    border-color: rgb(71, 203, 251);
+    color: #212529;
+}
+.heading {
+    background-color: #e1e1e1;
+}
+.gradeButtons {
+    text-align: center;
+    margin-bottom: 16px;
+}
+.addButton {
+    text-align: center;
+    margin-bottom: 0;
+}
+.stars {
+    color: #ffcd39;
+}
+.x {
+    color: #fb2f38;
+}
+.check {
+    color: #7a8b6a;
+}
+.build span {
+    margin-right: 8px;
+}
+.totals {
+    font-weight: bold;
+}
+.totals-body {
+    font-size: 20px;
+}
+
+
+

@@ -12,4 +12,5 @@ public class Gundam
     public string Grade { get; set; }
     public bool Built { get; set; }
     public int Rating { get; set; }
+    
 }

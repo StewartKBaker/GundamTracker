@@ -1,54 +1,32 @@
-@model IEnumerable<Gundam>
+@model GundamIndexView
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gunpla Collection</title>
-    <style>
-        ul {
-            list-style-type: none;
-        }
-        li {
-            text-align: center;
-        }
-        .price {
-            font-weight: bold;
-            color: rgb(71, 203, 251);
-        }
-        h1 {
-            font-size: 80px;
-        }
-        .card{
-            height: 590px;
-            width:  420px;
-        }
-        
-        .GundamImg{
-            max-width: 420px;
-            max-height: 420px;
-            display: block;
-            width: auto;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/index.css"/>
 </head>
 
 <body>
-<section class="py-5 text-center container">
+<section class="py-5 text-center heading">
     <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-light">Gunpla Collection</h1>
             <p class="lead text-body-secondary">Collection of all the Gundam Figures I Own!</p>
-            <p>
-                <a href="/Gundam/InsertGunpla/" class="btn btn-primary my-2">Add a New Gunpla</a>
+            <p class="gradeButtons">
+                <a class="btn btn-primary my-2 grade" asp-controller="Gundam" asp-action="Index" asp-route-gradeSort="All">View All</a>
+                <a class="btn btn-primary my-2 grade" asp-controller="Gundam" asp-action="Index" asp-route-gradeSort="HG">HG Gunpla</a>
+                <a class="btn btn-primary my-2 grade" asp-controller="Gundam" asp-action="Index" asp-route-gradeSort="MG">MG Gunpla</a>
+                <a class="btn btn-primary my-2 grade" asp-controller="Gundam" asp-action="Index" asp-route-gradeSort="RG">RG Gunpla</a>
+                <a class="btn btn-primary my-2 grade" asp-controller="Gundam" asp-action="Index" asp-route-gradeSort="PG">PG Gunpla</a>
             </p>
-            <p>
-                <a href="/Grades/GradeGunpla/" class="btn btn-primary my-2">HG Gunpla</a>
-                <a href="/Grades/GradeGunpla/" class="btn btn-primary my-2">MG Gunpla</a>
-                <a href="/Grades/GradeGunpla/" class="btn btn-primary my-2">RG Gunpla</a>
-                <a href="/Grades/GradeGunpla/" class="btn btn-primary my-2">PG Gunpla</a>
+            <p class="totals-body">Total Bought: <span class="totals">@Model.TotalBought</span> | Total Built: <span class="totals">@Model.TotalBuilt</span> | Total Spent: <span class="totals">@Model.TotalSpent</span></p>
+            <p class="addButton">
+                <a href="/Gundam/InsertGunpla/" class="btn btn-primary my-2">Add a New Gunpla</a>
             </p>
         </div>
     </div>
@@ -58,26 +36,43 @@
     <div class="container">
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            @foreach (var gunpla in @Model)
+            @foreach (var gunpla in Model.Gunpla)
             { 
                 <div class="col">
                     <div class="card shadow-sm">
                         <div class="GundamImg">
-                            <img src="@Url.Content($"~/Images/{gunpla.GundamID}.webp")" width="100%" height="100%" fill="#55595c" alt="@gunpla.Name"></img>
+                            <img src="@Url.Content($"~/Images/{gunpla.GundamID}.webp")" width="100%" height="100%" fill="#55595c" alt="@gunpla.Name">
                         </div>
                         <div class="card-body">
                             <ul>
                                 <li>@gunpla.Name</li>
                                 <li class="price">$ @gunpla.Price</li>
-                                <li>Built: @gunpla.Built</li>
-                                <li>Rating: @gunpla.Rating
-                                
+                                <li>
+                                    <div class="build">
+                                        @if (@gunpla.Built)
+                                        {
+                                            <span>Built:</span><i class="bi bi-check-square-fill check"></i> 
+                                        }
+                                        else
+                                        {
+                                            <span>Built:</span><i class="bi bi-x-square-fill x"></i>
+                                        } 
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="stars">
+                                        @for (int i = 1; i <= 5; i++)
+                                        {
+                                            var starClass = i <= @gunpla.Rating ? "bi-star-fill" : "bi-star";
+                                            <i class="bi @starClass"></i>
+                                        }
+                                    </div>
                                 </li>
                             </ul>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
+                            <div class="d-flex justify-content-between align-items-center ">
+                                <div class="btn-group ">
                                     <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/Gundam/ViewGunpla/@gunpla.GundamID">View</a></button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/Gundam/UpdateGunpla/@gunpla.GundamID">Update</a></button>
+                                    
                                 </div>
                                 <small class="text-body-secondary">Grade: @gunpla.Grade</small>
                             </div>
@@ -88,6 +83,6 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>
+

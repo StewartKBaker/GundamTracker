@@ -20,7 +20,7 @@ public class GundamRepo : IGundamRepo
 
     public IEnumerable<Gundam> GetGradeGunpla(string grade)
     {
-        return _conn.Query<Gundam>($"SELECT * FROM produsts WHERE Grade = '{grade}'");
+        return _conn.Query<Gundam>($"SELECT * FROM products WHERE Grade = '{grade}'");
     }
 
     public Gundam GetGunpla(int id)
