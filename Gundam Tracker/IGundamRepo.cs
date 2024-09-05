@@ -14,6 +14,7 @@ namespace Gundam_Tracker;
         
         public void InsertGunpla(Gundam gunplaToInsert);
 
+        public void DeleteGunpla(Gundam gundam);
     }
 
 

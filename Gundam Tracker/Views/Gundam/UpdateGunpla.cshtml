@@ -1,5 +1,18 @@
 @model Gundam
 
+<head>
+    <title>Create Gundam</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<div class="container">
 <h2>Update @Model.Name</h2>
 
 @using (Html.BeginForm("UpdateGunplaToDatabase", "Gundam", "Post"))
@@ -15,11 +28,16 @@
     <label asp-for="Grade" class="control-label">Grade</label>    
     <input type="text" name="Grade" class="form-control" value="@Model.Grade" />
     
-    <label asp-for="Built" class="control-label">Built</label>    
-    <input asp-for="Built"  type="checkbox" class="form-control" />
+    <div class="form-group">
+        <div class="form-check form-switch">
+            <input asp-for="Built" class="form-check-input" type="checkbox" id="buildSwitch"/>
+            <label class="form-check-label" for="buildSwitch">Built</label>
+        </div>
+    </div>
     
     <label asp-for="Rating" class="control-label">Rating (0-5)</label>    
     <input type="number" step="0.01" name="Rating" class="form-control" value="@Model.Rating" />
 
     <input type="submit" value="Update Product" class="btn btn-primary" />
 }
+</div>

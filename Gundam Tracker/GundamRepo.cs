@@ -57,6 +57,9 @@ public class GundamRepo : IGundamRepo
                 newRating = gunplaToInsert.Rating
             });
     }
-    
-    
+
+    public void DeleteGunpla(Gundam gundam)
+    {
+        _conn.Execute("DELETE FROM products WHERE GundamID = @id;", new { id = gundam.GundamID });
+    }
 }

@@ -26,9 +26,9 @@ h1 {
 .grade {
     background-color: rgb(71, 203, 251);
     padding: 3px 6px 3px 6px;
-    font-size: 12px;
+    font-size: 15px;
     border-color: rgb(71, 203, 251);
-    color: #212529;
+    color: white;
 }
 .heading {
     background-color: #e1e1e1;
@@ -60,5 +60,13 @@ h1 {
     font-size: 20px;
 }
 
+.btn-primary:hover {
+    background-color: rgb(71, 180, 251);
+    border-color: rgb(71, 180, 251);
+}
+.btn-outline-secondary:hover {
+    background-color: white;
+    color: rgb(71, 203, 251);
+}
 
 

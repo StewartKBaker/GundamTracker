@@ -17,8 +17,17 @@
         .container h2 {
             text-align: center;
         }
-        body {
-            
+        .update-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+        .delete-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
         }
     </style>    
 </head>
@@ -45,8 +54,15 @@
             <td>@Model.Rating</td>
         </tr>
     </table>
-    <div style="display: block">
-
+    <div class="update-button">
+        <a href="/Gundam/UpdateGunpla/@Model.GundamID" class="btn btn-primary my-2">Update This Gundam</a>
+    </div>
+    <div class="delete-button">
+        @using (Html.BeginForm("DeleteGundam", "Gundam", "Post"))
+        {
+        <input type="hidden" asp-for="GundamID" value="@Model.GundamID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this product" />
+        }
     </div>
 </div>
 </body>

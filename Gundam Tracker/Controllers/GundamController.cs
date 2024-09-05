@@ -91,4 +91,10 @@ public class GundamController : Controller
     {
         return View();
     }
+
+    public IActionResult DeleteGundam(Gundam gundam)
+    {
+        _repo.DeleteGunpla(gundam);
+        return RedirectToAction("Index");
+    }
 }

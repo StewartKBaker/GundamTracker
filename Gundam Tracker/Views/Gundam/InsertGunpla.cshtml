@@ -1,5 +1,15 @@
 @model Gundam
 
+<head>
+    <title>Create Gundam</title>
+    <style>
+        h2 {
+        text-align: center;
+        }
+    </style>
+</head>
+
+<div class="container">
 <h2>Create a New Gundam</h2>
 
 @using (Html.BeginForm("InsertGunplaToDatabase", "Gundam", "Post"))
@@ -19,9 +29,14 @@
         <option>RG</option>
         <option>PG</option>
     </select>
-    
-    <label asp-for="Built" class="control-label">Built</label>    
-    <input asp-for="Built"  type="checkbox" class="form-control" />
+
+<div class="form-group">
+    <label asp-for="Built" class="control-label">Built</label>
+    <div class="form-check form-switch">
+        <input asp-for="Built"  class="form-check-input" type="checkbox" id="buildSwitch" />
+        <label class="form-check-label" for="buildSwitch">Toggle Built</label>
+    </div>
+</div>
 
     <label asp-for="Rating">Rating</label>
     <select class="form-control" name="Rating" value="">
@@ -32,8 +47,7 @@
         <option>4</option>
         <option>5</option>
     </select>
-
-    
     
     <input type="submit" value="Create Product" class="btn btn-primary" />
 }
+</div>

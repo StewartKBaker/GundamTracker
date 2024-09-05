@@ -41,9 +41,9 @@ body {
   flex:1;
   max-width: calc(33.333% - 20px);
   box-sizing: border-box;
-  border: 1px solid rgba(0, 0, 0, .125);
   background-color: white;
   padding: 20px;
+  border-color: white;
 }
 
 .favorites-title {
@@ -53,11 +53,13 @@ body {
 
 .fav-desc {
   padding: 0 10px;
+  margin-top: 25px;
   font-size: 1.4rem;
   color: #333;
 }
 
 .favorites-header {
   margin: 70px;
+  font-size: 80px;
 }
 
