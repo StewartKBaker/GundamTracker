@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gunpla Collection</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> <!--Used to inport buttons from Bootstrap-->
     <link rel="stylesheet" href="css/index.css"/>
 </head>
 
@@ -18,15 +18,19 @@
             <h1 class="fw-light">Gunpla Collection</h1>
             <p class="lead text-body-secondary">Collection of all the Gundam Figures I Own!</p>
             <p class="gradeButtons">
-                <a class="btn btn-primary my-2 grade" asp-controller="Gundam" asp-action="Index" asp-route-gradeSort="All">View All</a>
+                <a class="btn btn-primary my-2 grade" asp-controller="Gundam" asp-action="Index" asp-route-gradeSort="All">View All</a> <!--Buttons that filter the database-->
                 <a class="btn btn-primary my-2 grade" asp-controller="Gundam" asp-action="Index" asp-route-gradeSort="HG">HG Gunpla</a>
                 <a class="btn btn-primary my-2 grade" asp-controller="Gundam" asp-action="Index" asp-route-gradeSort="MG">MG Gunpla</a>
                 <a class="btn btn-primary my-2 grade" asp-controller="Gundam" asp-action="Index" asp-route-gradeSort="RG">RG Gunpla</a>
                 <a class="btn btn-primary my-2 grade" asp-controller="Gundam" asp-action="Index" asp-route-gradeSort="PG">PG Gunpla</a>
             </p>
-            <p class="totals-body">Total Bought: <span class="totals">@Model.TotalBought</span> | Total Built: <span class="totals">@Model.TotalBuilt</span> | Total Spent: <span class="totals">@Model.TotalSpent</span></p>
+            <p class="gradeButtons">
+                <a class="btn btn-primary my-2 grade" asp-controller="Gundam" asp-action="Index" asp-route-gradeSort="BUILT">Built Gunpla</a>
+                <a class="btn btn-primary my-2 grade" asp-controller="Gundam" asp-action="Index" asp-route-gradeSort="NON-BUILT">Backlog Gunpla</a>
+            </p>
+            <p class="totals-body">Total Bought: <span class="totals">@Model.TotalBought</span> | Total Built: <span class="totals">@Model.TotalBuilt</span> | Total Spent: <span class="totals">@Model.TotalSpent</span></p> <!--Shows all the Totals for the database-->
             <p class="addButton">
-                <a href="/Gundam/InsertGunpla/" class="btn btn-primary my-2">Add a New Gunpla</a>
+                <a href="/Gundam/InsertGunpla/" class="btn btn-primary my-2">Add a New Gunpla</a> <!--Button to add a new gundam to database-->
             </p>
         </div>
     </div>
@@ -34,22 +38,21 @@
 
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
-
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            @foreach (var gunpla in Model.Gunpla)
+            @foreach (var gunpla in Model.Gunpla) //creates a container for each gundam figure in database
             { 
                 <div class="col">
                     <div class="card shadow-sm">
                         <div class="GundamImg">
-                            <img src="@Url.Content($"~/Images/{gunpla.GundamID}.webp")" width="100%" height="100%" fill="#55595c" alt="@gunpla.Name">
+                            <img src="@Url.Content($"~/Images/{gunpla.GundamID}.webp")" width="100%" height="100%" fill="#55595c" alt="@gunpla.Name"> <!--Displays an image for each figure that is saved in the Images folder with a number corresponding to gundamID-->
                         </div>
                         <div class="card-body">
                             <ul>
-                                <li>@gunpla.Name</li>
-                                <li class="price">$ @gunpla.Price</li>
+                                <li>@gunpla.Name</li> <!--Displays name for each gundam-->
+                                <li class="price">$ @gunpla.Price</li> <!--price for each gundam-->
                                 <li>
                                     <div class="build">
-                                        @if (@gunpla.Built)
+                                        @if (@gunpla.Built) //used to display checkmark or x based on built status
                                         {
                                             <span>Built:</span><i class="bi bi-check-square-fill check"></i> 
                                         }
@@ -61,7 +64,7 @@
                                 </li>
                                 <li>
                                     <div class="stars">
-                                        @for (int i = 1; i <= 5; i++)
+                                        @for (int i = 1; i <= 5; i++) //used to display stars based on rating in database
                                         {
                                             var starClass = i <= @gunpla.Rating ? "bi-star-fill" : "bi-star";
                                             <i class="bi @starClass"></i>
@@ -71,10 +74,10 @@
                             </ul>
                             <div class="d-flex justify-content-between align-items-center ">
                                 <div class="btn-group ">
-                                    <a class="btn btn-sm btn-outline-secondary" href="/Gundam/ViewGunpla/@gunpla.GundamID">View</a>
+                                    <a class="btn btn-sm btn-outline-secondary" href="/Gundam/ViewGunpla/@gunpla.GundamID">View</a> <!--Used to view specific gundam-->
                                     
                                 </div>
-                                <small class="text-body-secondary">Grade: @gunpla.Grade</small>
+                                <small class="text-body-secondary">Grade: @gunpla.Grade</small> <!--displays grade in bottom corner-->
                             </div>
                         </div>
                     </div>
